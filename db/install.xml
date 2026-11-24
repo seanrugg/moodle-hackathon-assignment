@@ -8,10 +8,12 @@
         <FIELD NAME="name" TYPE="char" LENGTH="255" NOTNULL="true" DEFAULT=""/>
         <FIELD NAME="intro" TYPE="text" NOTNULL="false"/>
         <FIELD NAME="slides_mandatory" TYPE="int" LENGTH="1" NOTNULL="true" DEFAULT="1"/>
+        <FIELD NAME="slides_type" TYPE="int" LENGTH="1" NOTNULL="true" DEFAULT="2"/> <!-- 0: File, 1: Link, 2: Both -->
         <FIELD NAME="video_mandatory" TYPE="int" LENGTH="1" NOTNULL="true" DEFAULT="0"/>
+        <FIELD NAME="video_type" TYPE="int" LENGTH="1" NOTNULL="true" DEFAULT="2"/> <!-- 0: File, 1: Link, 2: Both -->
         <FIELD NAME="site_mandatory" TYPE="int" LENGTH="1" NOTNULL="true" DEFAULT="0"/>
         <FIELD NAME="repo_mandatory" TYPE="int" LENGTH="1" NOTNULL="true" DEFAULT="0"/>
-        <FIELD NAME="grading_method" TYPE="char" LENGTH="50" NOTNULL="false" DEFAULT="simple"/>
+        <FIELD NAME="groupmode" TYPE="int" LENGTH="1" NOTNULL="true" DEFAULT="0"/> <!-- 0: No groups, 1: Separate groups, 2: Visible groups -->
       </FIELDS>
       <KEYS>
         <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
@@ -22,6 +24,7 @@
         <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
         <FIELD NAME="hackathonid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0"/>
         <FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0"/>
+        <FIELD NAME="groupid" TYPE="int" LENGTH="10" NOTNULL="false" DEFAULT="0"/>
         <FIELD NAME="slides_url" TYPE="text" NOTNULL="false"/>
         <FIELD NAME="video_url" TYPE="text" NOTNULL="false"/>
         <FIELD NAME="site_url" TYPE="text" NOTNULL="false"/>
